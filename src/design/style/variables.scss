@@ -1,0 +1,19 @@
+$spacing-types: (
+  m: margin,
+  p: padding
+);
+$spacing-directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+$spacing-base-size: 10px;
+$spacing-sizes: (
+  0: 0.5,
+  1: 1,
+  2: 1.5,
+  3: 2,
+  4: 2.5,
+  5: 3
+);

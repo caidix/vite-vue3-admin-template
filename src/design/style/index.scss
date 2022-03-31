@@ -1,0 +1,207 @@
+@import "./element-plus.scss";
+@import "./sidebar.scss";
+@import "./transition.scss";
+@import "./variables.scss";
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial,
+    sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clearfix {
+  &::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* 头部用户信息样式重置 */
+.hidden {
+  display: none !important;
+}
+
+/* 灰色模式 */
+.html-grey {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
+
+/* 色弱模式 */
+.html-weakness {
+  filter: invert(80%);
+  -webkit-filter: invert(80%);
+  -moz-filter: invert(80%);
+  -ms-filter: invert(80%);
+  -o-filter: invert(80%);
+}
+
+.pc-spacing {
+  margin: 10px;
+}
+
+.mobile-spacing {
+  margin: 0;
+}
+
+/* 进度条 */
+#nprogress {
+  pointer-events: none;
+
+  .bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(10, 241, 60);
+    opacity: 75%;
+  }
+}
+
+/* 灰色模式 */
+.html-grey {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
+
+/* 色弱模式 */
+.html-weakness {
+  filter: invert(80%);
+  -webkit-filter: invert(80%);
+  -moz-filter: invert(80%);
+  -ms-filter: invert(80%);
+  -o-filter: invert(80%);
+}
+
+/* 夜间模式 */
+[data-theme="dark"] {
+  filter: invert(0.9) hue-rotate(180deg);
+
+  img,
+  .icon-svg,
+  .login-container {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  // element plus
+  .el-radio-button__original-radio:checked + .el-radio-button__inner,
+  .el-image-viewer__close,
+  .el-image-viewer__actions__inner,
+  .el-image-viewer__next,
+  .el-image-viewer__prev {
+    color: #000 !important;
+  }
+
+  .el-overlay {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .el-drawer {
+    box-shadow: 0 8px 10px -5px rgb(0 0 0 / 1%), 0 16px 24px 2px rgb(0 0 0 / 2%),
+      0 6px 30px 5px rgb(0 0 0 / 1%);
+  }
+}
+
+// text-align
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+@each $typeKey, $type in $spacing-types {
+  // .m-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+  // .mx-1 , .my-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+  // .mt-1
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
