@@ -112,7 +112,7 @@ const {
 
 const body = document.documentElement as HTMLElement;
 
-let themeColors = ref<Array<themeColorsType>>([
+const themeColors = ref<Array<themeColorsType>>([
   // 道奇蓝（默认）
   { rgb: "27, 42, 71", themeColor: "default" },
   // 亮白色

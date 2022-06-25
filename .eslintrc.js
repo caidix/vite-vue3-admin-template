@@ -61,7 +61,11 @@ module.exports = {
     "vue/singleline-html-element-content-newline": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "vue/no-v-html": "off",
+    "vue/require-default-prop": "off",
+    "vue/require-explicit-emits": "off",
+    "vue/multi-word-component-names": "off",
     // 开发阶段暂时隐去无用参数的规则，项目完整后开启
     // "@typescript-eslint/no-unused-vars": [
     //   "warning",
@@ -77,5 +81,11 @@ module.exports = {
     //     varsIgnorePattern: "^_"
     //   }
     // ]
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto"
+      }
+    ]
   }
 };

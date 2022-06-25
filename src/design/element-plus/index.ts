@@ -62,7 +62,7 @@ import {
   Close,
   CloseBold,
   Bell
-} from "@element-plus/icons";
+} from "@element-plus/icons-vue";
 
 const components = [
   ElTag,

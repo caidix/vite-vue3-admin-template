@@ -1,10 +1,11 @@
 import { PageEnum } from "/@/dependencies/enums/pageEnum";
 
 import type { AppRouteRecordRaw, AppRouteModule } from "/@/router/types";
-import { REDIRECT_ROUTE } from "./basic";
+import Basic from "./basic";
 
 import Dashboard from "./dashboard";
 import Users from "./users";
+import Errors from "./error";
 
 export const RootRoute: AppRouteRecordRaw = {
   path: "/",
@@ -14,4 +15,4 @@ export const RootRoute: AppRouteRecordRaw = {
     title: "Root"
   }
 };
-export const basicRoutes = [RootRoute, Users, Dashboard, REDIRECT_ROUTE];
+export const basicRoutes = [RootRoute, Users, Dashboard, ...Basic, Errors];

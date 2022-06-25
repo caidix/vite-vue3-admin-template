@@ -22,3 +22,16 @@ export const REDIRECT_ROUTE: AppRouteRecordRaw = {
     }
   ]
 };
+
+export const LOGIN: AppRouteRecordRaw = {
+  path: "/login",
+  name: "login",
+  component: () => import("/@/views/login/index.vue"),
+  meta: {
+    title: "登录",
+    showLink: false,
+    rank: 101
+  }
+};
+
+export default [LOGIN, REDIRECT_ROUTE];

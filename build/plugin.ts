@@ -3,12 +3,13 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import svgLoader from "vite-svg-loader";
 import ElementPlus from "unplugin-element-plus/vite";
 import purgeIcons from "vite-plugin-purge-icons";
+import Unocss from "unocss/vite";
 import themePreprocessorPlugin from "@zougt/vite-plugin-theme-preprocessor";
 
 import { pathResolve } from "./utils";
 
 export function createVitePlugin(viteEnv: ViteEnv, isBuild: boolean) {
-  const vitePlugin = [vue(), vueJsx()];
+  const vitePlugin = [vue(), vueJsx(), Unocss()];
 
   vitePlugin.push(svgLoader());
 
